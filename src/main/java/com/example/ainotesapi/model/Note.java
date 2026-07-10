@@ -75,3 +75,14 @@ public class Note {
         return id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public LocalDateTime getLastUpdated() {
+        return lastUpdated;
+    }
+
+    public void setLastUpdated(LocalDateTime lastUpdated) {
+        this.lastUpdated = lastUpdated;
+    }
