@@ -31,3 +31,14 @@ public class Note {
     @Column(updatable = false)
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private LocalDateTime createdAt = LocalDateTime.now();
+
+    @UpdateTimestamp
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    private LocalDateTime lastUpdated;
+
+    public Note() {
+    }
+
+    public String getTitle() {
+        return title;
+    }
