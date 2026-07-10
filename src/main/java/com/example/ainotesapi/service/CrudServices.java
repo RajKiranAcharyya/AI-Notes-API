@@ -31,3 +31,14 @@ public class CrudServices {
         Note noteActual = findANote(id);
         // try {
             String summary = geminiService.summarizeNote(noteActual.getContent());
+            noteActual.setSummary(summary);
+            noteRepository.save(noteActual);
+            return summary;
+        // } catch (Exception e) {
+            // throw e;
+        // }
+    }
+
+    @Transactional
+    public Note addANewNote(Note note) {
+        return noteRepository.save(note);
