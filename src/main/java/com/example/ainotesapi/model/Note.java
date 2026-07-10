@@ -86,3 +86,4 @@ public class Note {
     public void setLastUpdated(LocalDateTime lastUpdated) {
         this.lastUpdated = lastUpdated;
     }
+}
