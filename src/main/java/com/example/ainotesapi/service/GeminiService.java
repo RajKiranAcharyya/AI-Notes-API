@@ -75,3 +75,10 @@ public class GeminiService {
  *         "tokenCount": 92
  *       }
  *     ],
+ *     "thoughtsTokenCount": 1335,
+ *     "serviceTier": "standard"
+ *   },
+ *   "modelVersion": "gemini-2.5-flash",
+ *   "responseId": "ggdQavzSGILHpgfhlLSRCA"
+ * }
+ */
