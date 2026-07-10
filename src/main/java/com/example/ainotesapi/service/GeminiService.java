@@ -42,3 +42,14 @@ public class GeminiService {
             String response = restTemplate.postForObject(finalurl, httpRequestEntity, String.class);
             String extractedResponse = new ObjectMapper().readTree(response).path("candidates").get(0).path("content")
                     .path("parts").get(0).path("text").asString();
+            return extractedResponse;
+        } catch (Exception e) {
+            throw new HttpServerErrorException(HttpStatus.BAD_GATEWAY,"Upstream AI Provider (Google Gemini) is currently overloaded or unavailable.");
+        }
+    }
+}
+
+/*
+ * {
+ *   "candidates": [
+ *     {
