@@ -64,3 +64,14 @@ public class GeminiService {
  *       "finishReason": "STOP",
  *       "index": 0
  *     }
+ *   ],
+ *   "usageMetadata": {
+ *     "promptTokenCount": 92,
+ *     "candidatesTokenCount": 10,
+ *     "totalTokenCount": 1437,
+ *     "promptTokensDetails": [
+ *       {
+ *         "modality": "TEXT",
+ *         "tokenCount": 92
+ *       }
+ *     ],
