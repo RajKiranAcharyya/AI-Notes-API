@@ -1,0 +1,90 @@
+############################
+# Maven Build
+############################
+target/
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+############################
+# Application Secrets
+############################
+.env
+.env.*
+!.env.example
+
+
+############################
+# IDE Files
+############################
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# VS Code
+.vscode/
+
+############################
+# AI / Local Workspace
+############################
+.agents/
+
+############################
+# Personal Notes
+############################
+learning-log-notesapi.md
+
+############################
+# Eclipse / Spring Tool Suite
+############################
+.apt_generated/
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache/
+
+############################
+# NetBeans
+############################
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+############################
+# Gradle
+############################
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+############################
+# Logs
+############################
+*.log
+
+############################
+# OS Files
+############################
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+############################
+# Temporary Files
+############################
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+############################
+# Misc
+############################
+HELP.md
