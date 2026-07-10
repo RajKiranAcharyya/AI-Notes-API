@@ -9,3 +9,14 @@ import jakarta.validation.Valid;
 import com.example.ainotesapi.service.CrudServices;
 import com.example.ainotesapi.service.GeminiService;
 
+@RestController
+public class RequestController {
+
+    @GetMapping("/")
+    public String hello() {
+        return "Welcome To AInOtEsAPI";
+    }
+
+    private final CrudServices crudServices;
+    private final GeminiService geminiService;
+
