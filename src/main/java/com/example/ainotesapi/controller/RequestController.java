@@ -53,3 +53,14 @@ public class RequestController {
         return new ResponseEntity<>(crudServices.addANewNote(note), HttpStatus.CREATED);
     }
 
+    @PostMapping("/summarizer/textSummarizer")
+    public ResponseEntity<String> summarizeText(@RequestBody String text) {
+        // try {
+        return new ResponseEntity<>(geminiService.summarizeNote(text), HttpStatus.OK);
+        // } catch (RuntimeException e) {
+        // return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_GATEWAY);
+    }
+
+    @PutMapping("/notes/updateNote/{id}")
+    public ResponseEntity<Note> updateNote(@PathVariable Long id, @Valid @RequestBody Note note) {
+        // try {
