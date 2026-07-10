@@ -53,3 +53,14 @@ public class GeminiService {
  * {
  *   "candidates": [
  *     {
+ *       "content": {
+ *         "parts": [
+ *           {
+ *             "text": "The note contains a long sequence of various letters."
+ *           }
+ *         ],
+ *         "role": "model"
+ *       },
+ *       "finishReason": "STOP",
+ *       "index": 0
+ *     }
