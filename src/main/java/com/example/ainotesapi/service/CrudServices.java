@@ -64,3 +64,10 @@ public class CrudServices {
         return noteRepository.save(noteActual);
     }
 
+    @Transactional
+    public String deleteANote(Long id) {
+        Note noteActual = findANote(id);
+        noteRepository.delete(noteActual);
+        return "Note with " + id + " is deleted";
+    }
+}
