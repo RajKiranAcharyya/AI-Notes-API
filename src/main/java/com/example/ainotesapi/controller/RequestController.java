@@ -42,3 +42,14 @@ public class RequestController {
     @GetMapping("/summarizer/noteSummarizer/{id}")
     public ResponseEntity<String> summarizeNote(@PathVariable Long id) {
         // try {
+        return new ResponseEntity<>(crudServices.summarizeNoteById(id), HttpStatus.OK);
+        // } catch (HttpServerErrorException e) {
+        // return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_GATEWAY);
+        // }
+    }
+
+    @PostMapping("/notes/addNew")
+    public ResponseEntity<Note> addNote(@Valid @RequestBody Note note) {
+        return new ResponseEntity<>(crudServices.addANewNote(note), HttpStatus.CREATED);
+    }
+
