@@ -31,3 +31,14 @@ public class RequestController {
     }
 
     @GetMapping("/notes/getNote/{id}")
+    public ResponseEntity<Note> getNote(@PathVariable Long id) {
+        // try {
+        return new ResponseEntity<>(crudServices.findANote(id), HttpStatus.OK);
+        // } catch (RuntimeException e) {
+        // return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        // }
+    }
+
+    @GetMapping("/summarizer/noteSummarizer/{id}")
+    public ResponseEntity<String> summarizeNote(@PathVariable Long id) {
+        // try {
