@@ -9,3 +9,14 @@ import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestTemplate;
+import tools.jackson.databind.ObjectMapper;
+
+@Service
+public class GeminiService {
+
+    @Value("${gemini.api.key}")
+    private String apiKey;
+
+    @Value("${gemini.api.url}")
+    private String apiUrl;
+
