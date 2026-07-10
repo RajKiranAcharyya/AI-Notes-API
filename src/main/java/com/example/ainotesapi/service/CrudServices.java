@@ -42,3 +42,14 @@ public class CrudServices {
     @Transactional
     public Note addANewNote(Note note) {
         return noteRepository.save(note);
+    }
+
+    @Transactional
+    public Note putUpdate(Long id, Note note) {
+        Note noteActual = findANote(id);
+        noteActual.setTitle(note.getTitle());
+        noteActual.setContent(note.getContent());
+        return noteRepository.save(noteActual);
+    }
+
+    @Transactional
