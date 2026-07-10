@@ -9,3 +9,5 @@ class AinotesapiApplicationTests {
 	@Test
 	void contextLoads() {
 	}
+
+}
