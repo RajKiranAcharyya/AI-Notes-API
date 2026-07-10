@@ -9,3 +9,14 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "AINotesAPI")
+public class Note {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    private Long id;
+
+    @NotBlank(message = "Title cannot be empty")
+    private String title;
+
