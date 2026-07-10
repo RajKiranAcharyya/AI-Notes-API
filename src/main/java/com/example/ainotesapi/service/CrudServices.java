@@ -20,3 +20,14 @@ public class CrudServices {
 
     public List<Note> returnAllNotes() {
         return noteRepository.findAll();
+    }
+
+    public Note findANote(Long id) {
+        return noteRepository.findById(id)
+                .orElseThrow(() -> new NoteNotFoundException("No Note found with this id: " + id));
+    }
+
+    public String summarizeNoteById(Long id) {
+        Note noteActual = findANote(id);
+        // try {
+            String summary = geminiService.summarizeNote(noteActual.getContent());
