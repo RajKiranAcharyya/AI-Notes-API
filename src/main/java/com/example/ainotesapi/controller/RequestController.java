@@ -64,3 +64,14 @@ public class RequestController {
     @PutMapping("/notes/updateNote/{id}")
     public ResponseEntity<Note> updateNote(@PathVariable Long id, @Valid @RequestBody Note note) {
         // try {
+        return new ResponseEntity<>(crudServices.putUpdate(id, note), HttpStatus.OK);
+        // } catch (RuntimeException e) {
+        // return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        // }
+    }
+
+    @PatchMapping("/notes/updatePartOfNote/{id}")
+    public ResponseEntity<Note> updatePartOfNoteRenameTitleAppendContent(@PathVariable Long id,
+            @RequestBody Note note) {
+        // try {
+        return new ResponseEntity<>(crudServices.patchUpdateRenameTitleAppendContent(id, note), HttpStatus.OK);
