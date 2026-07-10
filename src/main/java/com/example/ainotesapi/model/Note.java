@@ -20,3 +20,14 @@ public class Note {
     @NotBlank(message = "Title cannot be empty")
     private String title;
 
+    @NotBlank(message = "Content cannot be empty")
+    @Column(length = 2000)
+    private String content;
+
+    @Column(length = 500)
+    private String summary;
+
+    @CreationTimestamp
+    @Column(updatable = false)
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    private LocalDateTime createdAt = LocalDateTime.now();
