@@ -20,3 +20,14 @@ public class RequestController {
     private final CrudServices crudServices;
     private final GeminiService geminiService;
 
+    public RequestController(CrudServices crudServices, GeminiService geminiService) {
+        this.crudServices = crudServices;
+        this.geminiService = geminiService;
+    }
+
+    @GetMapping("/notes")
+    public ResponseEntity<List<Note>> allNotes() {
+        return new ResponseEntity<>(crudServices.returnAllNotes(), HttpStatus.OK);
+    }
+
+    @GetMapping("/notes/getNote/{id}")
