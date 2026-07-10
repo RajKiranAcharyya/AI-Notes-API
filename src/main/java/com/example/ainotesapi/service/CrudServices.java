@@ -53,3 +53,14 @@ public class CrudServices {
     }
 
     @Transactional
+    public Note patchUpdateRenameTitleAppendContent(Long id, Note note) {
+        Note noteActual = findANote(id);
+        if (note.getTitle() != null) {
+            noteActual.setTitle(note.getTitle());
+        }
+        if (note.getContent() != null) {
+            noteActual.setContent(noteActual.getContent() + note.getContent());
+        }
+        return noteRepository.save(noteActual);
+    }
+
